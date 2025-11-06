@@ -118,6 +118,22 @@ header .container {
     z-index: 1;
 }
 
+/* Header with Ko-fi widget layout */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header-text {
+    flex: 1;
+}
+
+.kofi-header {
+    flex-shrink: 0;
+}
+
 header h1 {
     font-size: 3rem;
     font-weight: 800;
@@ -674,6 +690,11 @@ article section h3 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
     header h1 {
         font-size: 2rem;
     }
