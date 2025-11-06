@@ -1,6 +1,8 @@
-# Abolish Kid Jail
+# My Kid Stays in School!
 
 A web application that helps parents generate demand letters for manifestation determination hearings, protecting special education students from discriminatory disciplinary actions.
+
+**Formerly "Abolish Kid Jail"** - same mission, more positive messaging focused on keeping kids in school with the support they need.
 
 ## About
 
