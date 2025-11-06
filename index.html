@@ -9,15 +9,22 @@
 
     <!-- Ko-fi Widget -->
     <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-    <script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#9673f5', 'Z8Z11O01HX');kofiwidget2.draw();</script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>My Kid Stays in School!</h1>
-            <p class="tagline">Protect Your Child's Rights - Generate a Manifestation Determination Demand Letter</p>
+        <div class="container header-content">
+            <div class="header-text">
+                <h1>My Kid Stays in School!</h1>
+                <p class="tagline">Protect Your Child's Rights - Generate a Manifestation Determination Demand Letter</p>
+            </div>
+            <div id="kofi-header-widget" class="kofi-header"></div>
         </div>
     </header>
+
+    <script type='text/javascript'>
+        kofiwidget2.init('Support Me', '#ffffff', 'Z8Z11O01HX');
+        document.getElementById('kofi-header-widget').innerHTML = kofiwidget2.getHTML();
+    </script>
 
     <nav>
         <div class="container">
