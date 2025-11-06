@@ -43,7 +43,7 @@ A manifestation determination hearing is required when:
 ## Using the Application
 
 ### Live Application
-🌐 **[Use the tool now](https://avophile.github.io/abolish-kid-jail/)**
+🌐 **[Use the tool now](https://abolish-kid-jail.netlify.app)** *(Update this URL after deployment)*
 
 ### How It Works
 
@@ -118,7 +118,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute. See [DEVELOPMENT.m
 
 ## Deployment
 
-The application is automatically deployed to GitHub Pages from the `main` branch.
+### Production Deployment
+
+This application is deployed on **Netlify** with automatic deployments from the `main` branch.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status)](https://app.netlify.com/sites/YOUR-SITE-NAME/deploys)
 
 ### Local Development
 
@@ -129,6 +133,33 @@ To run locally:
 
 ### Deploying Your Own Instance
 
+#### Option 1: Deploy to Netlify (Recommended)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/avophile/abolish-kid-jail)
+
+**Or manually:**
+
+1. Fork this repository
+2. Sign up for a free [Netlify account](https://netlify.com)
+3. Click "Add new site" > "Import an existing project"
+4. Connect to GitHub and select your forked repository
+5. Configure build settings:
+   - **Build command:** (leave empty)
+   - **Publish directory:** `.` (root)
+6. Click "Deploy site"
+7. Your site will be live at `https://YOUR-SITE-NAME.netlify.app`
+
+**Benefits of Netlify:**
+- ✅ Free SSL certificates (HTTPS)
+- ✅ Automatic deployments on git push
+- ✅ Deploy previews for pull requests
+- ✅ Built-in form handling (for future features)
+- ✅ Custom domains support
+- ✅ Edge CDN for fast global delivery
+- ✅ Security headers configured via `netlify.toml`
+
+#### Option 2: Deploy to GitHub Pages
+
 1. Fork this repository
 2. Go to Settings > Pages
 3. Set Source to "Deploy from a branch"
@@ -136,12 +167,24 @@ To run locally:
 5. Click Save
 6. Your site will be live at `https://yourusername.github.io/abolish-kid-jail/`
 
+#### Option 3: Deploy Anywhere
+
+This is a static site with no build process. You can host it on:
+- Vercel
+- Cloudflare Pages
+- AWS S3 + CloudFront
+- Firebase Hosting
+- Any static web hosting service
+
+Simply upload all files to your hosting provider.
+
 ## Technical Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **PDF Generation**: jsPDF (loaded via CDN)
-- **Hosting**: GitHub Pages (free, static site hosting)
+- **Hosting**: Netlify (or GitHub Pages, or any static host)
 - **Privacy**: 100% client-side - no backend, no data collection
+- **Configuration**: `netlify.toml` for Netlify-specific settings
 
 ## License
 

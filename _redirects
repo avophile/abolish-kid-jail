@@ -1,0 +1,21 @@
+# Netlify Redirects
+# https://docs.netlify.com/routing/redirects/
+
+# Redirect /index to root
+/index   /   301
+
+# Ensure trailing slashes are handled consistently
+/resources   /resources.html   200
+
+# Redirect common variations to the correct pages
+/home   /   301
+/letter   /   301
+/generate   /   301
+/learn   /resources.html   301
+/info   /resources.html   301
+
+# Handle markdown file requests - redirect to resources page
+/docs/*   /resources.html   200
+
+# 404 - redirect to home page
+/*   /index.html   404
