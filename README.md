@@ -40,6 +40,32 @@ A manifestation determination hearing is required when:
 - Student is placed in an interim alternative educational setting
 - Disciplinary action constitutes a "change in placement"
 
+## Using the Application
+
+### Live Application
+🌐 **[Use the tool now](https://avophile.github.io/abolish-kid-jail/)**
+
+### How It Works
+
+1. **Fill out the form** with your information:
+   - Your contact information
+   - Your child's information
+   - School and district information
+   - Details about the disciplinary action
+   - Any concerns about IEP implementation
+
+2. **Generate your letter** - Click the button and the application creates a professional demand letter based on federal IDEA requirements
+
+3. **Download the PDF** - A professionally formatted PDF is generated and downloaded to your device
+
+4. **Send to the school** - Print or email the letter to your school principal and special education director
+
+5. **Prepare for the hearing** - Use our resources page to understand your rights and prepare
+
+### Privacy & Security
+
+**Your data stays private.** This application runs entirely in your web browser. No information is sent to any server or database. Everything happens on your device, ensuring complete privacy and security.
+
 ## How This App Helps
 
 This application guides parents through generating a professional, legally-informed demand letter that:
@@ -50,14 +76,23 @@ This application guides parents through generating a professional, legally-infor
 - Demands the school schedule the hearing within required timeframes
 - Protects the parent's rights and their child's educational rights
 
-## Features (Planned)
+## Features
 
-- Simple questionnaire interface for parents
+✅ **Current Features (MVP Live!)**
+- Simple, accessible questionnaire interface for parents
 - Automatic letter generation based on parent input
-- PDF export for printing and delivery to school
-- Educational resources about manifestation determination rights
+- Professional PDF export for printing and delivery to school
+- Educational resources page about manifestation determination rights
+- Complete privacy - all processing happens in your browser (no data sent to servers)
+- Mobile-responsive design
+- Keyboard accessible
+
+🔮 **Planned Enhancements**
 - Sample documentation templates for preparing for the hearing
 - State-specific guidance where applicable
+- Multiple language support
+- Printable preparation checklists
+- Additional letter templates (follow-up, appeal)
 
 ## The Bigger Picture
 
@@ -79,9 +114,55 @@ This is an open-source advocacy tool. Contributions welcome from:
 - UX designers focused on accessibility
 - Educators who understand IEPs and manifestation determinations
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute. See [DEVELOPMENT.md](DEVELOPMENT.md) for technical details.
+
+## Deployment
+
+The application is automatically deployed to GitHub Pages from the `main` branch.
+
+### Local Development
+
+To run locally:
+1. Clone this repository
+2. Open `index.html` in a web browser
+3. That's it! No build process or dependencies needed.
+
+### Deploying Your Own Instance
+
+1. Fork this repository
+2. Go to Settings > Pages
+3. Set Source to "Deploy from a branch"
+4. Select `main` branch and `/ (root)` folder
+5. Click Save
+6. Your site will be live at `https://yourusername.github.io/abolish-kid-jail/`
+
+## Technical Stack
+
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **PDF Generation**: jsPDF (loaded via CDN)
+- **Hosting**: GitHub Pages (free, static site hosting)
+- **Privacy**: 100% client-side - no backend, no data collection
+
 ## License
 
-This project is open source and available for educational and advocacy purposes.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+This software is provided for educational and advocacy purposes and does not constitute legal advice.
+
+## Support
+
+If you find this tool helpful:
+- ⭐ Star this repository
+- 🔗 Share it with other parents who need it
+- 📝 Contribute improvements
+- 💬 Spread awareness about manifestation determination rights
+
+## Additional Resources
+
+- [Wrightslaw - Special Education Law and Advocacy](https://www.wrightslaw.com/)
+- [Council of Parent Attorneys and Advocates (COPAA)](https://www.copaa.org/)
+- [Parent Center Hub - Find Your State's PTI](https://www.parentcenterhub.org/find-your-center/)
+- [U.S. Department of Education - IDEA](https://sites.ed.gov/idea/)
 
 ---
 
