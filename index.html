@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate a professional demand letter for a manifestation determination hearing to protect your special education student's rights.">
+    <title>Abolish Kid Jail - Manifestation Determination Letter Generator</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Abolish Kid Jail</h1>
+            <p class="tagline">Protect Your Child's Rights - Generate a Manifestation Determination Demand Letter</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#form">Generate Letter</a></li>
+                <li><a href="resources.html">Learn About Your Rights</a></li>
+                <li><a href="docs/preparing-for-hearing.md">Prepare for Hearing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Stop the School-to-Prison Pipeline</h2>
+            <p>
+                When your child with an IEP faces suspension or other disciplinary action for more than 10 days,
+                federal law <strong>requires</strong> the school to hold a manifestation determination hearing.
+                This hearing determines whether the behavior was caused by their disability or by the school's
+                failure to implement their IEP.
+            </p>
+            <p class="highlight">
+                This tool helps you generate a professional demand letter to ensure the school follows the law
+                and protects your child from discriminatory discipline.
+            </p>
+        </section>
+
+        <section id="form" class="form-section">
+            <h2>Generate Your Demand Letter</h2>
+            <p class="instructions">
+                Fill out the form below with your information. All information stays private on your device -
+                nothing is sent to a server. When you're done, you'll be able to download a professional PDF
+                letter to send to your school.
+            </p>
+
+            <form id="letterForm">
+                <!-- Parent Information -->
+                <fieldset>
+                    <legend>Your Information (Parent/Guardian)</legend>
+
+                    <div class="form-group">
+                        <label for="parentName">Your Full Name *</label>
+                        <input type="text" id="parentName" name="parentName" required
+                               placeholder="Jane Smith" aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentAddress">Your Mailing Address *</label>
+                        <textarea id="parentAddress" name="parentAddress" required rows="3"
+                                  placeholder="123 Main Street&#10;Apartment 4B&#10;City, State 12345"
+                                  aria-required="true"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parentPhone">Your Phone Number *</label>
+                            <input type="tel" id="parentPhone" name="parentPhone" required
+                                   placeholder="(555) 123-4567" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parentEmail">Your Email Address *</label>
+                            <input type="email" id="parentEmail" name="parentEmail" required
+                                   placeholder="jane.smith@email.com" aria-required="true">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Student Information -->
+                <fieldset>
+                    <legend>Student Information</legend>
+
+                    <div class="form-group">
+                        <label for="studentName">Student's Full Name *</label>
+                        <input type="text" id="studentName" name="studentName" required
+                               placeholder="John Smith" aria-required="true">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentGrade">Grade Level</label>
+                            <input type="text" id="studentGrade" name="studentGrade"
+                                   placeholder="7th Grade">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="iepDate">Current IEP Date</label>
+                            <input type="date" id="iepDate" name="iepDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disability">Primary Disability Category (Optional)</label>
+                        <select id="disability" name="disability">
+                            <option value="">Select if you wish to include...</option>
+                            <option value="Autism">Autism</option>
+                            <option value="Emotional Disturbance">Emotional Disturbance</option>
+                            <option value="Specific Learning Disability">Specific Learning Disability</option>
+                            <option value="Other Health Impairment (including ADHD)">Other Health Impairment (including ADHD)</option>
+                            <option value="Intellectual Disability">Intellectual Disability</option>
+                            <option value="Speech or Language Impairment">Speech or Language Impairment</option>
+                            <option value="Multiple Disabilities">Multiple Disabilities</option>
+                            <option value="Traumatic Brain Injury">Traumatic Brain Injury</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <small>Including this is optional but can strengthen your case</small>
+                    </div>
+                </fieldset>
+
+                <!-- School Information -->
+                <fieldset>
+                    <legend>School Information</legend>
+
+                    <div class="form-group">
+                        <label for="schoolName">School Name *</label>
+                        <input type="text" id="schoolName" name="schoolName" required
+                               placeholder="Lincoln Middle School" aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="schoolAddress">School Address *</label>
+                        <textarea id="schoolAddress" name="schoolAddress" required rows="3"
+                                  placeholder="456 School Drive&#10;City, State 12345"
+                                  aria-required="true"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="principalName">Principal's Name *</label>
+                            <input type="text" id="principalName" name="principalName" required
+                                   placeholder="Dr. Sarah Johnson" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="spedDirectorName">Special Education Director's Name</label>
+                            <input type="text" id="spedDirectorName" name="spedDirectorName"
+                                   placeholder="Michael Williams">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="districtName">School District Name *</label>
+                        <input type="text" id="districtName" name="districtName" required
+                               placeholder="City Unified School District" aria-required="true">
+                    </div>
+                </fieldset>
+
+                <!-- Incident Information -->
+                <fieldset>
+                    <legend>Disciplinary Action Information</legend>
+
+                    <div class="form-group">
+                        <label for="incidentDate">Date of Incident *</label>
+                        <input type="date" id="incidentDate" name="incidentDate" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disciplineType">Type of Disciplinary Action *</label>
+                        <select id="disciplineType" name="disciplineType" required aria-required="true">
+                            <option value="">Select...</option>
+                            <option value="suspended">Suspended</option>
+                            <option value="removed from school">Removed from school</option>
+                            <option value="placed in interim alternative educational setting">Placed in interim alternative educational setting</option>
+                            <option value="recommended for expulsion">Recommended for expulsion</option>
+                            <option value="other">Other (specify below)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suspensionDays">Number of Days (if suspension) *</label>
+                        <input type="number" id="suspensionDays" name="suspensionDays" required
+                               placeholder="11" min="1" aria-required="true">
+                        <small>Enter total number of days (including any previous suspensions this year)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suspensionType">Suspension Type</label>
+                        <select id="suspensionType" name="suspensionType">
+                            <option value="consecutive">Single consecutive suspension</option>
+                            <option value="cumulative">Multiple suspensions totaling more than 10 days</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="incidentDescription">Brief Description of Behavior/Incident *</label>
+                        <textarea id="incidentDescription" name="incidentDescription" required rows="4"
+                                  placeholder="Describe what happened that led to the disciplinary action. Keep it factual and brief."
+                                  aria-required="true"></textarea>
+                        <small>This will appear in your letter. Keep it factual and concise.</small>
+                    </div>
+                </fieldset>
+
+                <!-- Optional: IEP Implementation Concerns -->
+                <fieldset>
+                    <legend>IEP Implementation Concerns (Optional but Recommended)</legend>
+
+                    <div class="form-group">
+                        <label for="iepConcerns">Do you have concerns that the IEP was not being properly implemented?</label>
+                        <textarea id="iepConcerns" name="iepConcerns" rows="4"
+                                  placeholder="Example: The behavior plan specified in the IEP was not being followed, required check-ins were not happening, accommodations were not provided, etc."></textarea>
+                        <small>Including this information strengthens your case if the school wasn't following the IEP</small>
+                    </div>
+                </fieldset>
+
+                <!-- Additional Options -->
+                <fieldset>
+                    <legend>Additional Options</legend>
+
+                    <div class="form-group">
+                        <label for="responseTimeline">How quickly should the school respond? (days)</label>
+                        <select id="responseTimeline" name="responseTimeline">
+                            <option value="3">3 business days</option>
+                            <option value="5" selected>5 business days</option>
+                            <option value="7">7 business days</option>
+                        </select>
+                        <small>By law, the hearing must occur within 10 school days, so a quick response is important</small>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Generate Letter</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="privacy-notice">
+            <h3>Privacy Notice</h3>
+            <p>
+                <strong>All information you enter stays on your device.</strong> This application runs entirely
+                in your web browser - no data is sent to any server or database. Your information is completely
+                private and secure.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>Disclaimer:</strong> This tool provides information and generates letters based on federal
+                special education law (IDEA). It does not constitute legal advice. For specific legal questions,
+                consult with a special education attorney or advocate.
+            </p>
+            <p>
+                <a href="https://github.com/avophile/abolish-kid-jail" target="_blank">View on GitHub</a> |
+                <a href="CONTRIBUTING.md">Contribute</a> |
+                Open Source for Educational and Advocacy Use
+            </p>
+        </div>
+    </footer>
+
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="src/js/form-handler.js"></script>
+    <script src="src/js/letter-generator.js"></script>
+    <script src="src/js/pdf-generator.js"></script>
+</body>
+</html>
