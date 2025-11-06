@@ -46,6 +46,8 @@
                 Fill out the form below with your information. All information stays private on your device -
                 nothing is sent to a server. When you're done, you'll be able to download a professional PDF
                 letter to send to your school.
+                <br><br>
+                <strong>✓ Grammar & Spell Checking:</strong> This form works with Grammarly, LanguageTool, and other grammar checking browser extensions to help you write clear, professional descriptions.
             </p>
 
             <form id="letterForm">
@@ -198,10 +200,15 @@
 
                     <div class="form-group">
                         <label for="incidentDescription">Brief Description of Behavior/Incident *</label>
+                        <!-- Grammar checking enabled via data attributes for Grammarly, LanguageTool, etc. -->
                         <textarea id="incidentDescription" name="incidentDescription" required rows="4"
                                   placeholder="Describe what happened that led to the disciplinary action. Keep it factual and brief."
-                                  aria-required="true"></textarea>
-                        <small>This will appear in your letter. Keep it factual and concise.</small>
+                                  aria-required="true"
+                                  data-gramm="true"
+                                  data-gramm-editor="true"
+                                  data-enable-grammarly="true"
+                                  spellcheck="true"></textarea>
+                        <small>This will appear in your letter. Keep it factual and concise. ✓ Grammar checking enabled (if you have Grammarly or similar extension installed)</small>
                     </div>
                 </fieldset>
 
@@ -211,9 +218,14 @@
 
                     <div class="form-group">
                         <label for="iepConcerns">Do you have concerns that the IEP was not being properly implemented?</label>
+                        <!-- Grammar checking enabled via data attributes for Grammarly, LanguageTool, etc. -->
                         <textarea id="iepConcerns" name="iepConcerns" rows="4"
-                                  placeholder="Example: The behavior plan specified in the IEP was not being followed, required check-ins were not happening, accommodations were not provided, etc."></textarea>
-                        <small>Including this information strengthens your case if the school wasn't following the IEP</small>
+                                  placeholder="Example: The behavior plan specified in the IEP was not being followed, required check-ins were not happening, accommodations were not provided, etc."
+                                  data-gramm="true"
+                                  data-gramm-editor="true"
+                                  data-enable-grammarly="true"
+                                  spellcheck="true"></textarea>
+                        <small>Including this information strengthens your case if the school wasn't following the IEP. ✓ Grammar checking enabled</small>
                     </div>
                 </fieldset>
 
@@ -245,6 +257,11 @@
                 <strong>All information you enter stays on your device.</strong> This application runs entirely
                 in your web browser - no data is sent to any server or database. Your information is completely
                 private and secure.
+            </p>
+            <p>
+                <strong>Grammar Checking:</strong> If you have Grammarly, LanguageTool, or similar browser extensions installed,
+                they will work with this form to help you write professionally. These extensions operate according to their
+                own privacy policies. You can use this form without any extensions - built-in spell check is also available.
             </p>
         </section>
     </main>

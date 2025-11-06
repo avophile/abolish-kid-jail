@@ -392,6 +392,17 @@ small {
     line-height: 1.4;
 }
 
+/* Grammar-enabled textareas */
+textarea[data-gramm="true"] {
+    position: relative;
+}
+
+textarea[data-gramm="true"] + small::before {
+    content: '✓ ';
+    color: var(--success-color);
+    font-weight: 600;
+}
+
 /* Buttons */
 .form-actions {
     display: flex;
