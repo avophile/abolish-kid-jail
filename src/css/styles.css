@@ -493,6 +493,46 @@ button:hover::before {
     margin: 0;
 }
 
+/* Support Section */
+.support-section {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.support-section h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.support-section p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kofi-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.kofi-container iframe {
+    display: block;
+}
+
 /* Messages */
 .success-message {
     background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);

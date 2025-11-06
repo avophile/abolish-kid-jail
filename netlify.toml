@@ -20,7 +20,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
 
     # Content Security Policy
-    # Allow jsPDF from CDN and images from Unsplash
+    # Allow jsPDF from CDN, images from Unsplash, and Ko-fi iframe
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
@@ -28,6 +28,7 @@
       img-src 'self' data: https://images.unsplash.com;
       font-src 'self' data:;
       connect-src 'self';
+      frame-src https://ko-fi.com;
       frame-ancestors 'none';
       base-uri 'self';
       form-action 'self';
