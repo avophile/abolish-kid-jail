@@ -1,68 +1,69 @@
-# My Kid Stays in School!
+# Give My Kid an IEP!
 
-A web application that helps parents generate demand letters for manifestation determination hearings, protecting special education students from discriminatory disciplinary actions.
-
-**Formerly "Abolish Kid Jail"** - same mission, more positive messaging focused on keeping kids in school with the support they need.
+A web application that helps parents request special education evaluations and secure IEPs (Individualized Education Programs) for their children who need support.
 
 ## About
 
-This application empowers parents to advocate for their children with disabilities by generating professional PDF letters that demand manifestation determination hearings when their special education student faces suspension or other disciplinary action.
+This application empowers parents to advocate for their children by generating professional PDF letters that request comprehensive special education evaluations from their school district. Every child who needs support deserves access to special education services - and it starts with a formal evaluation request.
 
-**The School-to-Prison Pipeline Starts Here** - When students with disabilities are suspended or expelled without proper consideration of their disability, it's the first step toward incarceration. This tool helps parents fight back by ensuring schools follow federal special education law (IDEA).
+**Breaking Down Barriers to Support** - Many parents don't know they have the right to request an evaluation, or they struggle with how to make the request in writing. This tool makes it simple and professional, helping families access the support their children need to succeed.
 
-## What is a Manifestation Determination Hearing?
+## What is an IEP Evaluation?
 
-A manifestation determination hearing is a **legally required meeting** that must occur when a student with an IEP (Individualized Education Program) receives disciplinary action resulting in removal from school for more than 10 days (consecutive or cumulative).
+An IEP evaluation is a **free, comprehensive assessment** that determines whether your child is eligible for special education services under the Individuals with Disabilities Education Act (IDEA).
 
-### Purpose
+### The Process
 
-The hearing team must answer two critical questions:
-
-1. **Was the student's behavior caused by or directly and substantially related to their disability?**
-2. **Was the behavior a direct result of the school district's failure to implement the student's IEP?**
-
-If the answer to either question is "yes," the school **cannot proceed** with standard disciplinary action. Instead, they must:
-- Conduct a Functional Behavioral Assessment (FBA) if needed
-- Develop or revise the Behavior Intervention Plan (BIP)
-- Provide appropriate support rather than punishment
+1. **Parent Requests Evaluation** - You submit a written request to the school (this tool helps you do that!)
+2. **School Responds** - School must respond within a reasonable time (typically 10-15 business days)
+3. **Consent and Evaluation** - You sign consent forms, and school conducts evaluation (60 days in most states)
+4. **Eligibility Meeting** - Team meets to determine if your child qualifies for an IEP
+5. **IEP Development** - If eligible, an IEP is created with goals, services, and accommodations
 
 ### Why This Matters
 
-- **Prevents discrimination** against students with disabilities
-- **Stops the school-to-prison pipeline** by addressing root causes instead of punishing disability-related behavior
-- **Holds schools accountable** for implementing IEPs correctly
-- **Protects students** from expulsion and law enforcement involvement
-- **Gives parents power** to advocate effectively for their children
+- **Every child deserves support** - If your child is struggling, they have a right to be evaluated
+- **It's completely free** - The school must evaluate at no cost to you
+- **You have legal rights** - IDEA gives parents the power to request evaluation at any time
+- **Early intervention helps** - Getting support early can prevent larger struggles later
+- **IEPs provide crucial support** - Specialized instruction, accommodations, and services can transform your child's education
 
-### Triggering Events
+### Who Should Request an Evaluation
 
-A manifestation determination hearing is required when:
-- Suspension or removal exceeds 10 school days (consecutive)
-- Multiple suspensions total more than 10 days and create a pattern
-- Student is placed in an interim alternative educational setting
-- Disciplinary action constitutes a "change in placement"
+Consider requesting an evaluation if your child:
+- Struggles academically despite interventions
+- Has difficulty with attention, focus, or behavior
+- Has been diagnosed with ADHD, autism, dyslexia, or other conditions
+- Shows significant delays in reading, writing, or math
+- Has speech/language difficulties
+- Struggles with social skills or emotional regulation
+- Has sensory processing challenges
+- Has difficulty with motor skills (fine or gross)
+- Is falling behind grade-level expectations
+- Would benefit from specialized support
 
 ## Using the Application
 
 ### Live Application
-🌐 **[Use the tool now](https://abolish-kid-jail.netlify.app)** *(Update this URL after deployment)*
+🌐 **[Use the tool now](https://give-my-kid-an-IEP.netlify.app)**
 
 ### How It Works
 
 1. **Fill out the form** with your information:
    - Your contact information
-   - Your child's information
+   - Your child's information (name, grade, date of birth)
    - School and district information
-   - Details about the disciplinary action
-   - Any concerns about IEP implementation
+   - Areas of concern (reading, behavior, speech, etc.)
+   - Description of your child's challenges
+   - Any previous support or diagnoses (optional)
 
-2. **Generate your letter** - Click the button and the application creates a professional demand letter based on federal IDEA requirements
+2. **Generate your letter** - Click the button and the application creates a professional evaluation request letter based on federal IDEA requirements
 
 3. **Download the PDF** - A professionally formatted PDF is generated and downloaded to your device
 
-4. **Send to the school** - Print or email the letter to your school principal and special education director
+4. **Send to the school** - Print or email the letter to your school principal and special education director (certified mail recommended)
 
-5. **Prepare for the hearing** - Use our resources page to understand your rights and prepare
+5. **What to expect** - Use our resources pages to understand the evaluation process and your rights
 
 ### Privacy & Security
 
@@ -70,51 +71,60 @@ A manifestation determination hearing is required when:
 
 ## How This App Helps
 
-This application guides parents through generating a professional, legally-informed demand letter that:
+This application guides parents through generating a professional, legally-informed evaluation request letter that:
 
-- Clearly states the legal requirement for a manifestation determination hearing
-- References relevant special education law (IDEA)
-- Documents the disciplinary action that triggered the requirement
-- Demands the school schedule the hearing within required timeframes
-- Protects the parent's rights and their child's educational rights
+- Clearly invokes your rights under IDEA to request evaluation
+- Describes your concerns about your child's learning and development
+- Requests specific areas of assessment based on your concerns
+- Requests timely response and consent forms from the school
+- References relevant special education law
+- Protects your rights as a parent throughout the process
 
 ## Features
 
-✅ **Current Features (MVP Live!)**
-- Simple, accessible questionnaire interface for parents
+✅ **Current Features**
+- Comprehensive questionnaire covering all areas of potential disability
+- Checkbox selection for areas of concern (reading, math, behavior, speech, etc.)
+- Detailed description fields with grammar-checking support
+- Optional fields for medical diagnoses and previous interventions
 - Automatic letter generation based on parent input
 - Professional PDF export for printing and delivery to school
-- Educational resources page about manifestation determination rights
+- Educational resources about IEP evaluation rights and process
+- Step-by-step guide on what to expect during the evaluation
 - Complete privacy - all processing happens in your browser (no data sent to servers)
 - Mobile-responsive design
 - Keyboard accessible
+- Free and open source
 
 🔮 **Planned Enhancements**
-- Sample documentation templates for preparing for the hearing
-- State-specific guidance where applicable
+- State-specific timeline information
 - Multiple language support
-- Printable preparation checklists
-- Additional letter templates (follow-up, appeal)
+- Follow-up letter templates (if school refuses, requesting IEP meeting, etc.)
+- Printable checklists for preparing for eligibility meetings
+- Sample questions to ask during the evaluation process
 
 ## The Bigger Picture
 
-Every year, thousands of students with disabilities are pushed out of schools through suspensions and expulsions that don't account for their disabilities. This leads to:
+Millions of children with disabilities struggle in school without proper support. Many parents don't realize they have the right to request a free evaluation, or they feel intimidated by the process. This leads to:
 
-- Lost educational opportunities
-- Increased involvement with law enforcement
-- Higher rates of juvenile justice system contact
-- Long-term negative outcomes
+- Students falling further behind academically
+- Increased behavioral issues due to frustration
+- Loss of confidence and self-esteem
+- Long-term negative academic and life outcomes
+- Preventable special education referrals in later grades
+- Families paying for private evaluations they can't afford
 
-**By helping parents demand manifestation determination hearings, we're stopping the school-to-prison pipeline at its source.**
+**By helping parents request evaluations early and effectively, we're ensuring students get the support they need to thrive.**
 
 ## Get Involved
 
 This is an open-source advocacy tool. Contributions welcome from:
-- Parents with experience navigating special education advocacy
+- Parents with experience navigating the IEP evaluation process
 - Special education attorneys and advocates
+- Special education teachers and school psychologists
 - Web developers
 - UX designers focused on accessibility
-- Educators who understand IEPs and manifestation determinations
+- Anyone passionate about educational equity
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute. See [DEVELOPMENT.md](DEVELOPMENT.md) for technical details.
 
@@ -123,8 +133,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute. See [DEVELOPMENT.m
 ### Production Deployment
 
 This application is deployed on **Netlify** with automatic deployments from the `main` branch.
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status)](https://app.netlify.com/sites/YOUR-SITE-NAME/deploys)
 
 ### Local Development
 
@@ -137,7 +145,7 @@ To run locally:
 
 #### Option 1: Deploy to Netlify (Recommended)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/avophile/abolish-kid-jail)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/avophile/give-my-kid-an-IEP)
 
 **Or manually:**
 
@@ -155,7 +163,6 @@ To run locally:
 - ✅ Free SSL certificates (HTTPS)
 - ✅ Automatic deployments on git push
 - ✅ Deploy previews for pull requests
-- ✅ Built-in form handling (for future features)
 - ✅ Custom domains support
 - ✅ Edge CDN for fast global delivery
 - ✅ Security headers configured via `netlify.toml`
@@ -167,7 +174,7 @@ To run locally:
 3. Set Source to "Deploy from a branch"
 4. Select `main` branch and `/ (root)` folder
 5. Click Save
-6. Your site will be live at `https://yourusername.github.io/abolish-kid-jail/`
+6. Your site will be live at `https://yourusername.github.io/give-my-kid-an-IEP/`
 
 #### Option 3: Deploy Anywhere
 
@@ -187,6 +194,7 @@ Simply upload all files to your hosting provider.
 - **Hosting**: Netlify (or GitHub Pages, or any static host)
 - **Privacy**: 100% client-side - no backend, no data collection
 - **Configuration**: `netlify.toml` for Netlify-specific settings
+- **Grammar Support**: Compatible with Grammarly and LanguageTool browser extensions
 
 ## License
 
@@ -200,15 +208,28 @@ If you find this tool helpful:
 - ⭐ Star this repository
 - 🔗 Share it with other parents who need it
 - 📝 Contribute improvements
-- 💬 Spread awareness about manifestation determination rights
+- 💬 Spread awareness about IEP evaluation rights
+- ☕ [Support on Ko-fi](https://ko-fi.com/givemykidaniep)
 
 ## Additional Resources
 
+### National Organizations
 - [Wrightslaw - Special Education Law and Advocacy](https://www.wrightslaw.com/)
 - [Council of Parent Attorneys and Advocates (COPAA)](https://www.copaa.org/)
 - [Parent Center Hub - Find Your State's PTI](https://www.parentcenterhub.org/find-your-center/)
+- [Understood.org - Learning and Thinking Differences](https://www.understood.org/)
+- [National Center for Learning Disabilities](https://www.ncld.org/)
+
+### Federal Resources
 - [U.S. Department of Education - IDEA](https://sites.ed.gov/idea/)
+- [Center for Parent Information and Resources](https://www.parentcenterhub.org/)
+
+### Disability-Specific Organizations
+- **ADHD:** [CHADD](https://chadd.org/)
+- **Autism:** [Autism Society](https://autism-society.org/), [ASAN](https://autisticadvocacy.org/)
+- **Dyslexia:** [International Dyslexia Association](https://dyslexiaida.org/)
+- **Intellectual Disabilities:** [The Arc](https://thearc.org/)
 
 ---
 
-*"No child with a disability should be criminalized for behaviors related to their disability. Every student deserves support, not suspension."*
+*"Every child deserves the support they need to learn and thrive. Knowledge of your rights is the first step to securing that support."*

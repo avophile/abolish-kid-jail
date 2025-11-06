@@ -1,6 +1,6 @@
 /**
- * Letter Generator
- * Creates the manifestation determination demand letter based on form data
+ * Letter Generator for IEP Evaluation Request
+ * Creates professional evaluation request letters based on form data
  */
 
 /**
@@ -12,12 +12,13 @@ function generateLetter(data) {
         recipient: generateRecipient(data),
         subject: generateSubject(data),
         greeting: generateGreeting(data),
-        facts: generateFactsSection(data),
-        legal: generateLegalRequirement(),
-        demand: generateDemand(),
-        records: generateRecordsRequest(),
+        introduction: generateIntroduction(data),
+        concerns: generateConcernsSection(data),
+        legalBasis: generateLegalBasis(data),
+        request: generateRequest(data),
+        additionalInfo: generateAdditionalInfo(data),
         timeline: generateTimeline(data),
-        rights: generateRightsPreservation(),
+        contact: generateContact(data),
         closing: generateClosing(data)
     };
 
@@ -52,12 +53,12 @@ function generateRecipient(data) {
     });
 
     // Special Education Director (if provided)
-    if (data.spedDirectorName && data.spedDirectorName !== '') {
+    if (data.spedDirectorName && data.spedDirectorName.trim() !== '') {
         recipients.push({
             name: data.spedDirectorName,
             title: 'Special Education Director',
             organization: data.districtName,
-            address: data.schoolAddress // Could be different, but using school address for now
+            address: data.schoolAddress
         });
     }
 
@@ -68,7 +69,7 @@ function generateRecipient(data) {
  * Generate subject line
  */
 function generateSubject(data) {
-    return `${data.studentName} - Demand for Manifestation Determination Review`;
+    return `${data.studentName} - Request for Special Education Evaluation`;
 }
 
 /**
@@ -76,7 +77,7 @@ function generateSubject(data) {
  */
 function generateGreeting(data) {
     const names = [data.principalName];
-    if (data.spedDirectorName && data.spedDirectorName !== '') {
+    if (data.spedDirectorName && data.spedDirectorName.trim() !== '') {
         names.push(data.spedDirectorName);
     }
 
@@ -88,108 +89,230 @@ function generateGreeting(data) {
 }
 
 /**
- * Generate statement of facts section
+ * Generate introduction section
  */
-function generateFactsSection(data) {
-    let factsText = `I am writing to formally demand that the school district conduct a manifestation determination review for my child, ${data.studentName}, who is a student with a disability receiving special education services under an Individualized Education Program (IEP)`;
+function generateIntroduction(data) {
+    let intro = `I am writing to formally request a comprehensive special education evaluation for my child, ${data.studentName}`;
 
-    // Add IEP date if provided
-    if (data.iepDate) {
-        const iepDateFormatted = formatInputDate(data.iepDate);
-        factsText += ` dated ${iepDateFormatted}`;
+    // Add date of birth if provided
+    if (data.studentDOB) {
+        const dobFormatted = formatInputDate(data.studentDOB);
+        intro += ` (date of birth: ${dobFormatted})`;
     }
 
-    factsText += '.\n\n';
+    intro += `, who is currently in ${data.studentGrade}`;
 
-    // Statement of Facts heading
-    factsText += 'Statement of Facts:\n\n';
-
-    // Format the incident date
-    const incidentDateFormatted = formatInputDate(data.incidentDate);
-
-    // Describe the disciplinary action
-    let actionText = `On ${incidentDateFormatted}, my child was ${data.disciplineType}`;
-
-    if (data.disciplineType === 'suspended' || data.disciplineType === 'removed from school') {
-        actionText += ` for ${data.suspensionDays} days`;
+    // Add teacher if provided
+    if (data.currentTeacher && data.currentTeacher.trim() !== '') {
+        intro += ` in ${data.currentTeacher}'s class`;
     }
 
-    actionText += ` for the following: ${data.incidentDescription}`;
+    intro += ' at ' + data.schoolName + '.';
 
-    factsText += actionText + '\n\n';
-
-    // Explain why this constitutes a change of placement
-    if (data.suspensionType === 'cumulative') {
-        factsText += `My child has now been suspended for a total of ${data.suspensionDays} days during this school year, which exceeds the 10-day threshold requiring a manifestation determination review. `;
-    }
-
-    factsText += 'This disciplinary action constitutes a change in placement as defined under the Individuals with Disabilities Education Act (IDEA), 34 CFR § 300.530.';
-
-    // Add IEP implementation concerns if provided
-    if (data.iepConcerns && data.iepConcerns !== '') {
-        factsText += '\n\nAdditionally, I have concerns regarding the implementation of my child\'s IEP: ' + data.iepConcerns;
-    }
-
-    return factsText;
+    return intro;
 }
 
 /**
- * Generate legal requirement section
+ * Generate concerns section
  */
-function generateLegalRequirement() {
-    return 'Legal Requirement:\n\n' +
-           'Under IDEA regulations at 34 CFR § 300.530(e), when a student with an IEP is subject to a disciplinary removal that constitutes a change in placement, the school district must conduct a manifestation determination review. This review must occur within 10 school days of the decision to take disciplinary action.';
+function generateConcernsSection(data) {
+    let concernsText = 'Areas of Concern:\n\n';
+
+    // Get selected concern areas
+    const concernAreas = data.concernAreas || [];
+    if (concernAreas.length > 0) {
+        concernsText += 'I have concerns about my child in the following areas:\n';
+        concernAreas.forEach(area => {
+            concernsText += `• ${formatConcernArea(area)}\n`;
+        });
+        concernsText += '\n';
+    }
+
+    // Add detailed description
+    concernsText += 'Specific Concerns:\n\n';
+    concernsText += data.concernDescription;
+
+    // Add suspected disability if provided
+    if (data.suspectedDisability && data.suspectedDisability.trim() !== '') {
+        concernsText += '\n\nBased on these concerns, I suspect my child may have ' + data.suspectedDisability + '.';
+    }
+
+    return concernsText;
 }
 
 /**
- * Generate demand section
+ * Generate legal basis section
  */
-function generateDemand() {
-    return 'Demand:\n\n' +
-           'I hereby demand that the school district immediately schedule a manifestation determination meeting to:\n\n' +
-           '1. Determine whether my child\'s conduct was caused by, or had a direct and substantial relationship to, my child\'s disability; and\n\n' +
-           '2. Determine whether my child\'s conduct was the direct result of the school district\'s failure to implement my child\'s IEP.';
+function generateLegalBasis(data) {
+    return 'Legal Basis:\n\n' +
+           'Under the Individuals with Disabilities Education Act (IDEA), 20 U.S.C. § 1414(a)(1)(B), parents have the right to request an evaluation at any time to determine if their child is eligible for special education and related services. The school district must evaluate a child if there is reason to suspect a disability that may require special education services.';
 }
 
 /**
- * Generate required information/records request section
+ * Generate request section
  */
-function generateRecordsRequest() {
-    return 'Required Information:\n\n' +
-           'In preparation for this meeting, I request that the school district provide me with copies of all relevant educational records, including but not limited to:\n\n' +
-           '- All disciplinary records for the current school year\n' +
-           '- My child\'s current IEP and all evaluations\n' +
-           '- All teacher observations and incident reports related to the disciplinary action\n' +
-           '- Documentation of IEP implementation\n' +
-           '- Any behavior intervention plan (BIP) or functional behavioral assessment (FBA)\n' +
-           '- All communications regarding this incident';
+function generateRequest(data) {
+    let requestText = 'Formal Request:\n\n';
+
+    // Type of evaluation
+    const evalType = data.evaluationType || 'comprehensive';
+    if (evalType === 'comprehensive') {
+        requestText += 'I am requesting a comprehensive evaluation in all areas of suspected disability, including but not limited to:\n\n';
+    } else if (evalType === 'reevaluation') {
+        requestText += 'I am requesting a re-evaluation of my child in all areas of suspected disability, including but not limited to:\n\n';
+    } else {
+        requestText += 'I am requesting an initial special education evaluation in all areas of suspected disability, including but not limited to:\n\n';
+    }
+
+    // List evaluation areas based on concerns
+    const concernAreas = data.concernAreas || [];
+    const evalAreas = [];
+
+    if (concernAreas.includes('reading') || concernAreas.includes('writing') || concernAreas.includes('math')) {
+        evalAreas.push('Academic achievement and educational performance');
+    }
+    if (concernAreas.includes('attention') || concernAreas.includes('cognitive')) {
+        evalAreas.push('Cognitive functioning and executive function');
+    }
+    if (concernAreas.includes('behavior') || concernAreas.includes('social')) {
+        evalAreas.push('Social-emotional functioning and behavior');
+    }
+    if (concernAreas.includes('speech')) {
+        evalAreas.push('Speech and language');
+    }
+    if (concernAreas.includes('motor')) {
+        evalAreas.push('Fine and gross motor skills');
+    }
+    if (concernAreas.includes('sensory') || concernAreas.includes('adaptive')) {
+        evalAreas.push('Adaptive behavior and sensory processing');
+    }
+
+    // If no specific areas selected or other was selected, add generic areas
+    if (evalAreas.length === 0 || concernAreas.includes('other')) {
+        evalAreas.push('All areas related to the suspected disability');
+    }
+
+    evalAreas.forEach(area => {
+        requestText += `• ${area}\n`;
+    });
+
+    requestText += '\nI request that the evaluation be conducted by qualified professionals and include multiple assessments and observations as required by IDEA.';
+
+    // Add consent and meeting requests
+    if (data.requestConsent) {
+        requestText += '\n\nI request that the school provide me with consent forms for the evaluation immediately so we can begin this process without delay.';
+    }
+
+    if (data.requestMeeting) {
+        requestText += '\n\nI also request a meeting with the appropriate school staff to discuss my concerns in detail before or during the evaluation process.';
+    }
+
+    return requestText;
+}
+
+/**
+ * Generate additional information section
+ */
+function generateAdditionalInfo(data) {
+    let additionalText = '';
+
+    // Previous support
+    if (data.previousSupport && data.previousSupport.trim() !== '') {
+        additionalText += 'Previous Interventions and Support:\n\n';
+        additionalText += data.previousSupport + '\n\n';
+    }
+
+    // Medical diagnosis
+    if (data.medicalDiagnosis && data.medicalDiagnosis.trim() !== '') {
+        additionalText += 'Medical Information:\n\n';
+        additionalText += 'My child has been diagnosed with the following condition(s): ' + data.medicalDiagnosis + '\n\n';
+    }
+
+    // Outside evaluations
+    if (data.outsideEvaluations && data.outsideEvaluations.trim() !== '') {
+        additionalText += 'Outside Evaluations and Services:\n\n';
+        additionalText += data.outsideEvaluations + '\n\n';
+    }
+
+    // Urgency
+    if (data.urgency && data.urgency.trim() !== '') {
+        additionalText += 'Urgency:\n\n';
+        additionalText += data.urgency + '\n\n';
+    }
+
+    return additionalText.trim();
 }
 
 /**
  * Generate timeline section
  */
 function generateTimeline(data) {
-    const days = data.responseTimeline || '5';
+    const days = data.responseTimeline || '10';
 
-    return 'Timeline:\n\n' +
-           `IDEA requires that this manifestation determination meeting occur within 10 school days of the decision to change my child's placement. I expect to receive notice of the scheduled meeting date, time, and location within ${days} business days.`;
+    let timelineText = 'Timeline and Next Steps:\n\n';
+    timelineText += `Under IDEA, the school district must respond to this request within a reasonable time. I request written confirmation of receipt of this letter and notice of the school's decision regarding this evaluation request within ${days} business days.\n\n`;
+
+    timelineText += 'If the school agrees to evaluate my child, please provide:\n';
+    timelineText += '• Written notice of the proposed evaluation\n';
+    timelineText += '• Consent forms for me to review and sign\n';
+    timelineText += '• Information about the evaluation process and timeline\n';
+    timelineText += '• Notice of procedural safeguards (parent rights)\n\n';
+
+    timelineText += 'If the school refuses to evaluate my child, please provide written notice explaining the reason for refusal, as required by 34 CFR § 300.503.';
+
+    return timelineText;
 }
 
 /**
- * Generate rights preservation section
+ * Generate contact information section
  */
-function generateRightsPreservation() {
-    return 'Preservation of Rights:\n\n' +
-           'This letter serves to preserve all of my rights and my child\'s rights under IDEA, Section 504 of the Rehabilitation Act, the Americans with Disabilities Act, and any applicable state laws. My child should remain in their current educational placement (stay-put) pending the outcome of the manifestation determination review, unless we agree otherwise in writing.';
+function generateContact(data) {
+    const preferredContact = data.preferredContact || 'both';
+
+    let contactText = 'Contact Information:\n\n';
+
+    if (preferredContact === 'email') {
+        contactText += `Please contact me via email at ${data.parentEmail} to schedule any meetings or discuss this request.`;
+    } else if (preferredContact === 'phone') {
+        contactText += `Please contact me via phone at ${data.parentPhone} to schedule any meetings or discuss this request.`;
+    } else {
+        contactText += `You may reach me at ${data.parentPhone} or ${data.parentEmail} to schedule any meetings or discuss this request.`;
+    }
+
+    contactText += ' I am eager to work collaboratively with the school to ensure my child receives appropriate support.';
+
+    return contactText;
 }
 
 /**
  * Generate closing section
  */
 function generateClosing(data) {
-    return `I can be reached at ${data.parentPhone} or ${data.parentEmail} to schedule this meeting. I expect prompt action on this matter.\n\n` +
+    return 'Thank you for your prompt attention to this matter. I look forward to working together to support my child\'s educational needs.\n\n' +
            'Sincerely,\n\n\n' +
            data.parentName;
+}
+
+/**
+ * Helper function to format concern areas for display
+ */
+function formatConcernArea(area) {
+    const areaMap = {
+        'reading': 'Reading/Literacy',
+        'writing': 'Writing',
+        'math': 'Mathematics',
+        'attention': 'Attention/Focus/ADHD',
+        'behavior': 'Behavior/Emotional Regulation',
+        'social': 'Social Skills/Peer Relationships',
+        'speech': 'Speech/Language/Communication',
+        'motor': 'Fine or Gross Motor Skills',
+        'sensory': 'Sensory Processing',
+        'adaptive': 'Daily Living/Adaptive Skills',
+        'cognitive': 'Cognitive/Learning/Memory',
+        'other': 'Other concerns (see detailed description)'
+    };
+
+    return areaMap[area] || area;
 }
 
 /**
@@ -231,12 +354,17 @@ function generatePlainTextLetter(data) {
     text += `${letter.greeting}\n\n`;
 
     // Body sections
-    text += `${letter.facts}\n\n`;
-    text += `${letter.legal}\n\n`;
-    text += `${letter.demand}\n\n`;
-    text += `${letter.records}\n\n`;
+    text += `${letter.introduction}\n\n`;
+    text += `${letter.concerns}\n\n`;
+    text += `${letter.legalBasis}\n\n`;
+    text += `${letter.request}\n\n`;
+
+    if (letter.additionalInfo) {
+        text += `${letter.additionalInfo}\n\n`;
+    }
+
     text += `${letter.timeline}\n\n`;
-    text += `${letter.rights}\n\n`;
+    text += `${letter.contact}\n\n`;
     text += `${letter.closing}\n`;
 
     return text;

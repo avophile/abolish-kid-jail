@@ -1,5 +1,5 @@
 /**
- * Form Handler
+ * Form Handler for IEP Evaluation Request
  * Manages form submission, validation, and data collection
  */
 
@@ -53,9 +53,21 @@ function collectFormData() {
     const formData = new FormData(form);
     const data = {};
 
+    // Collect regular fields
     for (let [key, value] of formData.entries()) {
-        data[key] = value.trim();
+        // Skip checkboxes for now, handle them separately
+        if (key !== 'concernAreas') {
+            data[key] = value.trim();
+        }
     }
+
+    // Handle checkbox group for concern areas
+    const concernCheckboxes = document.querySelectorAll('input[name="concernAreas"]:checked');
+    data.concernAreas = Array.from(concernCheckboxes).map(cb => cb.value);
+
+    // Handle individual checkboxes
+    data.requestConsent = document.getElementById('requestConsent')?.checked || false;
+    data.requestMeeting = document.getElementById('requestMeeting')?.checked || false;
 
     // Add current date
     data.currentDate = formatDate(new Date());
@@ -73,14 +85,13 @@ function validateFormData(data) {
         'parentPhone',
         'parentEmail',
         'studentName',
+        'studentGrade',
+        'studentDOB',
         'schoolName',
         'schoolAddress',
         'principalName',
         'districtName',
-        'incidentDate',
-        'disciplineType',
-        'suspensionDays',
-        'incidentDescription'
+        'concernDescription'
     ];
 
     for (let field of requiredFields) {
@@ -88,6 +99,13 @@ function validateFormData(data) {
             console.warn(`Required field missing: ${field}`);
             return false;
         }
+    }
+
+    // Validate that at least one concern area is selected
+    if (!data.concernAreas || data.concernAreas.length === 0) {
+        console.warn('At least one concern area must be selected');
+        showMessage('Please select at least one area of concern', 'error');
+        return false;
     }
 
     return true;
@@ -156,7 +174,7 @@ function getValueOrEmpty(value) {
  */
 function saveFormData(data) {
     try {
-        localStorage.setItem('manifestationFormData', JSON.stringify(data));
+        localStorage.setItem('iepEvaluationFormData', JSON.stringify(data));
     } catch (e) {
         console.warn('Could not save form data to localStorage:', e);
     }
@@ -167,7 +185,7 @@ function saveFormData(data) {
  */
 function loadSavedFormData() {
     try {
-        const saved = localStorage.getItem('manifestationFormData');
+        const saved = localStorage.getItem('iepEvaluationFormData');
         if (saved) {
             return JSON.parse(saved);
         }
@@ -182,7 +200,7 @@ function loadSavedFormData() {
  */
 function clearSavedFormData() {
     try {
-        localStorage.removeItem('manifestationFormData');
+        localStorage.removeItem('iepEvaluationFormData');
     } catch (e) {
         console.warn('Could not clear saved form data:', e);
     }
